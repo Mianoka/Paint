@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutNouveau"
+        android:layout_width="80dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/Nouveau"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="?attr/actionModeCopyDrawable" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutEnregistrer"
+        android:layout_width="80dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/linearLayoutNouveau"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/Enregistrer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:drawable/ic_menu_save" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutRetour"
+        android:layout_width="80dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="5dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/linearLayoutEnregistrer"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/Retour"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:drawable/ic_menu_revert" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutFermer"
+        android:layout_width="80dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/linearLayoutRetour"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/Fermer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="80dp"
+        android:layout_height="75dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="86dp"></LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
