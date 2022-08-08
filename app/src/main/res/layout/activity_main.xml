@@ -3,84 +3,154 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+    <com.example.applicationtest.DrawingView
+        android:id="@+id/drawingView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
-
-    <LinearLayout
-        android:id="@+id/linearLayoutNouveau"
-        android:layout_width="80dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="16dp"
-        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/horizontalLayout0"
+        android:layout_width="500dp"
+        android:layout_height="99dp"
+        android:layout_marginEnd="483dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/drawingView"
+        app:layout_constraintEnd_toEndOf="@+id/drawingView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageButton
-            android:id="@+id/Nouveau"
+            android:id="@+id/btnBrush"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="?attr/actionModeCopyDrawable" />
+            android:layout_weight="0.5"
+            app:srcCompat="@drawable/ic_brush_foreground" />
+
+        <ImageButton
+            android:id="@+id/btnNew"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_new_draw_foreground" />
+
+        <ImageButton
+            android:id="@+id/btnReturn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_return_foreground" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayoutEnregistrer"
-        android:layout_width="80dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="8dp"
+        android:id="@+id/verticalLayout"
+        android:layout_width="150dp"
+        android:layout_height="699dp"
+        android:layout_marginTop="12dp"
         android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@+id/linearLayoutNouveau"
-        app:layout_constraintTop_toTopOf="parent">
+        android:scrollbars="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalLayout0">
 
-        <ImageButton
-            android:id="@+id/Enregistrer"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:srcCompat="@android:drawable/ic_menu_save" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:text="Formes" />
 
-    <LinearLayout
-        android:id="@+id/linearLayoutRetour"
-        android:layout_width="80dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="5dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@+id/linearLayoutEnregistrer"
-        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="98dp"
+            android:layout_height="258dp"
+            android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/Retour"
+            <TableLayout
+                android:layout_width="98dp"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/lineBtn"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        app:srcCompat="@drawable/icon_line_foreground" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/rectBtn"
+                        android:layout_width="75dp"
+                        android:layout_height="81dp"
+                        app:srcCompat="@drawable/rect" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/ovalBtn"
+                        android:layout_width="72dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/ic_circle_foreground" />
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:srcCompat="@android:drawable/ic_menu_revert" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:text="Bordure" />
 
-    <LinearLayout
-        android:id="@+id/LinearLayoutFermer"
-        android:layout_width="80dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="10dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@+id/linearLayoutRetour"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageButton
-            android:id="@+id/Fermer"
+        <SeekBar
+            android:id="@+id/borderBar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:max="4" />
 
-    <LinearLayout
-        android:layout_width="80dp"
-        android:layout_height="75dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="86dp"></LinearLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Couleur bordure" />
+
+        <com.larswerkman.holocolorpicker.ColorPicker
+            android:id="@+id/borderPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Couleur" />
+
+        <com.larswerkman.holocolorpicker.ColorPicker
+            android:id="@+id/fillPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
