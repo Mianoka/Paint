@@ -1,5 +1,6 @@
 # Paint
 
+Everthing is in the branck "paint"
 
 
 ## Getting started
