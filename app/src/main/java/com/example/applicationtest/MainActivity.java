@@ -104,13 +104,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        this.btnFree.setOnClickListener(new View.OnClickListener() {
+        /*this.btnFree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawingView.formeType = "Free";
                 fillPicker.setVisibility(View.INVISIBLE);
             }
-        });
+        });*/
 
         this.borderBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
