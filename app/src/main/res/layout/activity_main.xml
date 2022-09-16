@@ -6,77 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <com.example.applicationtest.DrawingView
         android:id="@+id/drawingView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <LinearLayout
-        android:id="@+id/horizontalLayout0"
-        android:layout_width="500dp"
-        android:layout_height="99dp"
-        android:layout_marginEnd="483dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/drawingView"
-        app:layout_constraintEnd_toEndOf="@+id/drawingView"
-        app:layout_constraintHorizontal_bias="0.0"
+    <ImageButton
+        android:id="@+id/btnNew"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:srcCompat="@android:drawable/btn_dialog" />
 
-        <ImageButton
-            android:id="@+id/btnBrush"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            app:srcCompat="@drawable/ic_brush_foreground" />
+    <ImageButton
+        android:id="@+id/btnBrush"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_weight="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/btn_dropdown"
+        tools:layout_editor_absoluteY="16dp" />
 
-        <ImageButton
-            android:id="@+id/btnNew"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_new_draw_foreground" />
-
-        <ImageButton
-            android:id="@+id/btnReturn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true"
-            app:srcCompat="@drawable/ic_return_foreground" />
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/btnReturn"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toEndOf="@+id/btnBrush"
+        app:srcCompat="@drawable/ic_return_foreground"
+        tools:layout_editor_absoluteY="16dp" />
 
     <LinearLayout
         android:id="@+id/verticalLayout"
-        android:layout_width="150dp"
-        android:layout_height="699dp"
+        android:layout_width="85dp"
+        android:layout_height="450dp"
         android:layout_marginTop="12dp"
+        android:background="#D8D5D5"
         android:orientation="vertical"
         android:scrollbars="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalLayout0">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Formes" />
+        app:layout_constraintTop_toBottomOf="@+id/btnNew">
 
         <LinearLayout
             android:layout_width="98dp"
-            android:layout_height="258dp"
+            android:layout_height="158dp"
             android:orientation="vertical">
 
             <TableLayout
                 android:layout_width="98dp"
-                android:layout_height="match_parent">
+                android:layout_height="153dp">
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -84,8 +79,8 @@
 
                     <ImageButton
                         android:id="@+id/lineBtn"
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         app:srcCompat="@drawable/icon_line_foreground" />
 
                 </TableRow>
@@ -96,8 +91,8 @@
 
                     <ImageButton
                         android:id="@+id/rectBtn"
-                        android:layout_width="75dp"
-                        android:layout_height="81dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         app:srcCompat="@drawable/rect" />
                 </TableRow>
 
@@ -107,8 +102,8 @@
 
                     <ImageButton
                         android:id="@+id/ovalBtn"
-                        android:layout_width="72dp"
-                        android:layout_height="80dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         app:srcCompat="@drawable/ic_circle_foreground" />
                 </TableRow>
 
@@ -128,29 +123,25 @@
             android:layout_height="wrap_content"
             android:max="4" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Couleur bordure" />
 
         <com.larswerkman.holocolorpicker.ColorPicker
             android:id="@+id/borderPicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Couleur" />
+            android:text="Remplissage" />
 
         <com.larswerkman.holocolorpicker.ColorPicker
             android:id="@+id/fillPicker"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible" />
+            android:layout_height="wrap_content" />
     </LinearLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
